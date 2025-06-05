@@ -10,7 +10,7 @@ import {authRouter} from "./routes/auth/authRoutes";
 require('dotenv').config()
 
 export const app = express()
-const port = process.env.PORT
+const port = 5000 //process.env.PORT
 
 // const parserMiddleware = bodyParser({})
 // app.use(parserMiddleware)

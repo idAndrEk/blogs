@@ -1,0 +1,49 @@
+services:
+  backend:
+    build:
+      context: .
+    container_name: blogs-backend
+    command: npm start
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URL=${MONGO_URL}
+      - PORT=5000
+    networks:
+      - blogs_default
+    depends_on:
+      - mongo
+  frontend:
+    build:
+      context: ./frontend
+    container_name: blogs-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - blogs_default
+  nginx:
+   build:
+    context: ./nginx
+    dockerfile: Dockerfile
+   container_name: blogs-nginx
+   ports:
+    - "80:80"
+   networks:
+    - blogs_default
+   depends_on:
+    - backend
+    - frontend
+  mongo:
+    image: mongo:4.4
+    container_name: blogs-mongo-1
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - blogs_default
+volumes:
+  mongodb_data:
+networks:
+  blogs_default:
+    driver: bridge

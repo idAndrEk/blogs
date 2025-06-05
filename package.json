@@ -23,7 +23,7 @@
     "joi": "^17.13.3",
     "json-web-token": "^3.2.0",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.3.0",
+    "mongodb": "^6.17.0",
     "supertest": "^6.3.4",
     "ts-jest": "^29.1.2"
   },
@@ -34,6 +34,17 @@
     "dotenv": "^16.4.5",
     "nodemon": "^3.0.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
-  }
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idAndrEk/blogs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/idAndrEk/blogs/issues"
+  },
+  "homepage": "https://github.com/idAndrEk/blogs#readme",
+  "description": ""
 }
